@@ -18,5 +18,3 @@ export const findOne: Handler = (event: any, context: Context) => {
 
 export const deleteOne: Handler = (event: any) =>
   booksController.deleteOne(event);
-
-// cp -R node_modules/mongoose dist/app/node_modules &&

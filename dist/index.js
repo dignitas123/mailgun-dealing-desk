@@ -18,4 +18,3 @@ const findOne = (event, context) => {
 exports.findOne = findOne;
 const deleteOne = (event) => booksController.deleteOne(event);
 exports.deleteOne = deleteOne;
-// cp -R node_modules/mongoose dist/app/node_modules &&
