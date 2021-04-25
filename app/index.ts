@@ -1,14 +1,4 @@
 import { Handler, Context } from "aws-lambda";
-import dotenv from "dotenv";
-import path from "path";
-const dotenvPath = path.join(
-  __dirname,
-  "../",
-  `config/.env.${process.env.NODE_ENV}`
-);
-dotenv.config({
-  path: dotenvPath,
-});
 
 import { books } from "./model";
 import { BooksController } from "./controller/books";
@@ -28,3 +18,5 @@ export const findOne: Handler = (event: any, context: Context) => {
 
 export const deleteOne: Handler = (event: any) =>
   booksController.deleteOne(event);
+
+// cp -R node_modules/mongoose dist/app/node_modules &&

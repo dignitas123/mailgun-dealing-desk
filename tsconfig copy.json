@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    // "outDir": "./dist",
+    // "baseUrl": "./",
+    "rootDirs": ["app", "app/controller", "app/model", "app/service", "app/utils"],
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "target": "esnext",
+  }
+}

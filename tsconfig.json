@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "lib": ["esnext"],
     "module": "commonjs",
-    "moduleResolution": "node",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "lib",
-    "sourceMap": true,
-    "target": "esnext"
+    "target": "ES2017",
+    "lib": ["ES2019"],
+    "rootDirs": ["app", "app/controller", "app/model", "app/service", "app/utils"],
+    "outDir": "dist",
+    "declaration": false, 
+    "sourceMap": false,
+    "inlineSources": false,
+    "esModuleInterop": true,
+    "types": ["node"]
   },
-  "exclude": ["node_modules"]
+  "exclude": ["tests"]
 }

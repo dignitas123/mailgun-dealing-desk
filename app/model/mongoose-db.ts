@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-export default mongoose.connect(process.env.DB_URL, {
+const atlas_uri: string = 'mongodb+srv://dbMailapi:fATngFEApBcdwzt6@cluster0.k2vgu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+export default mongoose.connect(atlas_uri, {
   dbName: process.env.DB_NAME,
   useUnifiedTopology: true,
   useNewUrlParser: true,

@@ -1,6 +1,6 @@
 import lambdaTester from "lambda-tester";
 import { expect } from "chai";
-import { findOne, find, create, update, deleteOne } from "../app/handler";
+import { findOne, find, create, update, deleteOne } from "../app";
 import * as booksMock from "./books.mock";
 import { books as BooksModel } from "../app/model/books";
 import sinon from "sinon";

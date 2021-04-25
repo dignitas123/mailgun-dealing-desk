@@ -14,7 +14,7 @@ export class BooksController extends BooksService {
    * @param {*} event
    */
   async create(event: any, context?: Context) {
-    console.log("functionName", context.functionName);
+    if (context) console.log("functionName", context.functionName);
     const params: CreateBookDTO = JSON.parse(event.body);
 
     try {
