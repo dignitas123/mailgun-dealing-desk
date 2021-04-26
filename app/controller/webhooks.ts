@@ -66,17 +66,19 @@ export class WebhooksController extends WebhooksService {
       [key: string]: any;
     }
 
+    // create messageText by using the `_params` key-value pairs
     const messageText: LooseObject = {};
 
-    for (var property in messageObj) {
+    for (let property in messageObj) {
       if (!messageObj.hasOwnProperty("provider")) {
-        messageText[property] = params[property];
+        messageText[property] = _params[property];
       } else {
         messageText[property] = process.env.EMAILPROVIDER;
       }
     }
 
-    var params = {
+    // params for sending
+    const params = {
       Message: JSON.stringify(messageText), // MESSAGE_TEXT
       TopicArn: ARN, // TOPIC_ARN
     };
