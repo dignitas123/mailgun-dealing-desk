@@ -3,9 +3,15 @@
     "module": "commonjs",
     "target": "ES2017",
     "lib": ["ES2019"],
-    "rootDirs": ["app", "app/controller", "app/model", "app/service", "app/utils"],
+    "rootDirs": [
+      "app",
+      "app/controller",
+      "app/model",
+      "app/service",
+      "app/utils"
+    ],
     "outDir": "dist",
-    "declaration": false, 
+    "declaration": false,
     "sourceMap": false,
     "inlineSources": false,
     "esModuleInterop": true,

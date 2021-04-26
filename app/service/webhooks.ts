@@ -1,5 +1,5 @@
 import { Model } from "mongoose";
-import { SaveWebhookDTO } from "../model/dto/saveWebhookDTO";
+import { WebhookSave } from "../model/dto/webhookSave";
 
 export class WebhooksService {
   private webhooks: Model<any>;
@@ -8,13 +8,17 @@ export class WebhooksService {
   }
 
   /**
-   * Create book
+   * create webhook data
    * @param params
    */
-  protected async saveWebhook(params: SaveWebhookDTO): Promise<object> {
+  protected async createWebhookData(params: WebhookSave): Promise<object> {
     try {
       const result = await this.webhooks.create({
-        data: params.data,
+        ip: params.ip,
+        event: params.event,
+        timestamp: params.timestamp,
+        recipient: params.recipient,
+        id: params.id
       });
 
       return result;

@@ -8,14 +8,13 @@
     "postbuild": "cp -R node_modules dist/node_modules && (cd dist && zip -r ../dist.zip .)",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "local": "serverless offline",
-    "deploy": "npm run build && serverless deploy",
-    "test": "cross-env NODE_ENV=dev mocha -r ts-node/register tests/*.test.ts --exit",
-    "coverage": "nyc --reporter lcov npm run test"
+    "deploy": "npm run build && serverless deploy"
   },
   "pre-commit": [
     "lint"
   ],
   "dependencies": {
+    "@aws-sdk/client-sns": "^3.13.1",
     "@types/aws-lambda": "^8.10.51",
     "dotenv": "^8.2.0",
     "mongoose": "^5.9.10"

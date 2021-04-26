@@ -1,10 +1,9 @@
-import { Handler, Context } from "aws-lambda";
+import { Handler } from "aws-lambda";
+import { hooks } from "./model";
+import { WebhooksController } from "./controller/webhooks";
 
-import { books } from "./model";
-import { BooksController } from "./model/hooks";
+const webhooksController = new WebhooksController(hooks);
 
-const booksController = new BooksController(books);
-
-export const handler: Handler = async (event: any, context: Context) => {
-  return booksController.create(event, context);
+export const handler: Handler = async (event: any) => {
+  return webhooksController.saveHook(event);
 };
