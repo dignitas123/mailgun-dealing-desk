@@ -33,7 +33,7 @@ export class WebhooksController extends WebhooksService {
     const params: SaveWebhookDTO = JSON.parse(event.body)["event-data"];
 
     // check if it's from mailgun
-    if (params["headers"]["messages"]["message-id"].includes("mailgun.org"))
+    if (params["message"]["headers"]["message-id"].includes("mailgun.org"))
       process.env["EMAILPROVIDER"] = "Mailgun";
     else
       return {
