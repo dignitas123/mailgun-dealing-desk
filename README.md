@@ -11,15 +11,23 @@ authorAvatar: 'https://avatars0.githubusercontent.com/u/17956058?s=460&u=f3aceba
 -->
 # Serverless Nodejs Rest API with TypeScript And MongoDB Atlas
 
-This is a REST API for AWS Lambda with TypeScript, MongoDB Atlas and SNS.
+This is a REST API for AWS Lambda with TypeScript, MongoDB Atlas and SNS, that processes webhooks from mailgun.
 
 ## Use Cases
 
-* REST API with typescript
-* MongoDB Atlas data storage
-* Multi-environment management under Serverless
-* Mocha unit tests and lambda-tester interface test
-* AWS lambda function log view
+* REST API with Typescript
+* MongoDB Atlas Storage of webhooks
+* Send out data of webhooks with SNS
+
+
+## Settings
+
+There are my own default settings, but you can set up environment variables for MongoDB connection and more to overwrite the defaults. e.g. DB_URI and DB_HOOKS_COLLECTION.
+
+* in model/dto/saveWebhookDTO.ts you can set up the controlling layer / the interface for the expected data
+* in model/dt/webhookSave.ts you can set up the data types expected to save on MongoDB
+* in model/hooks.ts you can set up the exact data you want to have on MongoDB
+* in model/sns/paramInterface.ts you can set up which data you want to send out to SNS
 
 ## Deploy
 
